@@ -1,6 +1,7 @@
 import React from 'react';
 import {TextInputProps, TextInput, StyleSheet} from 'react-native';
 import {wt} from '../../lib/responsiveSize';
+import {palette} from '../../constants/palette';
 
 interface Props extends TextInputProps {
   style?: object;
@@ -10,7 +11,7 @@ interface Props extends TextInputProps {
 const CustomTextInput = ({style, refProp, ...props}: Props) => {
   const styles = StyleSheet.create({
     input: {
-      color: '#000',
+      color: palette.TEXT,
       borderWidth: 1,
       borderRadius: 2,
       paddingHorizontal: wt(10),
