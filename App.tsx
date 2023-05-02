@@ -5,7 +5,7 @@ import RootNavigator from './src/navigation/RootNavigator';
 
 const App = observer(() => {
   return (
-    <KeyboardAvoidingView behavior="padding" style={styles.container}>
+    <KeyboardAvoidingView behavior="height" style={styles.container}>
       <NavigationContainer>
         <RootNavigator />
       </NavigationContainer>
