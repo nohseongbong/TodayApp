@@ -9,7 +9,7 @@ const MainNavigator = () => {
   return (
     <Stack.Navigator
       initialRouteName={STACK_NAME.TAB}
-      screenOptions={{headerShown: false, animation: 'fade_from_bottom'}}>
+      screenOptions={{headerShown: false}}>
       <Stack.Screen name={STACK_NAME.TAB} component={TabNavigator} />
     </Stack.Navigator>
   );

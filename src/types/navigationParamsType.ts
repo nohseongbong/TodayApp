@@ -4,6 +4,6 @@ export type RootStackParamList = {
   [STACK_NAME.TAB]: undefined;
   [STACK_NAME.MAIN]: undefined;
   [SCREEN_NAME.SPLASH]: undefined;
-  [SCREEN_NAME.MAIN]: undefined;
-  [SCREEN_NAME.CREATE]: undefined;
+  [SCREEN_NAME.LIST]: undefined;
+  [SCREEN_NAME.WRITE]: undefined;
 };

@@ -1,7 +1,7 @@
 export enum SCREEN_NAME {
   SPLASH = 'SplashScreen',
-  MAIN = 'MainScreen',
-  CREATE = 'CreateScreen',
+  LIST = 'MainScreen',
+  WRITE = 'WriteScreen',
 }
 
 export enum STACK_NAME {
