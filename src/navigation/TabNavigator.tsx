@@ -3,6 +3,7 @@ import {RootStackParamList} from '../types/navigationParamsType';
 import ListScreen from '../screens/ListScreen';
 import WriteScreen from '../screens/WriteScreen';
 import {SCREEN_NAME} from '../constants/navigation';
+import TabBar from '../components/TabBar';
 
 const Tab = createBottomTabNavigator<RootStackParamList>();
 
@@ -12,7 +13,8 @@ const TabNavigator = () => {
       initialRouteName={SCREEN_NAME.LIST}
       screenOptions={{
         headerShown: false,
-      }}>
+      }}
+      tabBar={props => <TabBar {...props} />}>
       <Tab.Screen
         name={SCREEN_NAME.LIST}
         component={ListScreen}
