@@ -1,7 +1,7 @@
-import CreateContainer from '../components/write/WriteContainer';
+import WriteContainer from '../components/write/WriteContainer';
 
 const WriteScreen = () => {
-  return <CreateContainer />;
+  return <WriteContainer />;
 };
 
 export default WriteScreen;

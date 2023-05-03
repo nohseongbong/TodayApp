@@ -6,4 +6,5 @@ export type RootStackParamList = {
   [SCREEN_NAME.SPLASH]: undefined;
   [SCREEN_NAME.LIST]: undefined;
   [SCREEN_NAME.WRITE]: undefined;
+  [SCREEN_NAME.TODO]: undefined;
 };

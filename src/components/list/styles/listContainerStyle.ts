@@ -37,7 +37,7 @@ const style = () => {
     tab_btn_text: {
       color: '#ddd',
       fontSize: fs(14),
-      fontWeight: '500',
+      fontWeight: 'bold',
     },
     tab_btn_text_active: {
       color: palette.BUTTON_TEXT,
@@ -72,6 +72,20 @@ const style = () => {
       height: '70%',
       paddingTop: ht(5),
       overflow: 'hidden',
+    },
+    state_complete: {
+      color: colors.COMPLETE,
+    },
+    not_todo_wrap: {
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+    not_todo_text: {
+      color: '#949996',
+      fontSize: 16,
+      fontWeight: 'bold',
+      marginBottom: ht(60),
     },
   });
 };

@@ -1,4 +1,4 @@
-import React, {memo} from 'react';
+import React, {memo, useCallback, useEffect} from 'react';
 import {View} from 'react-native';
 import CustomText from '../custom-component/CustomText';
 import style from './styles/listContainerStyle';
@@ -7,10 +7,16 @@ import {listStore} from '../../store/listStore';
 import {observer} from 'mobx-react-lite';
 import CustomFlatList from '../custom-component/CustomFlatList';
 import {dummyData} from '../../data/testData';
+import {NavigationProp, useNavigation} from '@react-navigation/native';
+import {RootStackParamList} from '../../types/navigationParamsType';
+import {SCREEN_NAME} from '../../constants/navigation';
+import {todoStore} from '../../store/todoStore';
+import {TodoType} from '../../types/todoType';
 
 const ListContainer = observer(() => {
   const store = listStore;
   const styles = style();
+  const navigation: NavigationProp<RootStackParamList> = useNavigation();
 
   const onPressTab = (type: string) => {
     store.setTabType(type);
@@ -30,15 +36,26 @@ const ListContainer = observer(() => {
     </CustomTouchable>
   );
 
+  const onPressListitem = useCallback((item: TodoType) => {
+    navigation.navigate(SCREEN_NAME.TODO);
+    todoStore.setTodo(item);
+  }, []);
+
   const RenderListitem = memo(({item}: any) => {
-    console.log(item, '아이템');
     return (
-      <CustomTouchable style={styles.list_item_wrap}>
+      <CustomTouchable
+        onPress={() => {
+          onPressListitem(item);
+        }}
+        style={styles.list_item_wrap}>
         <View style={styles.list_item_header}>
           <CustomText style={styles.list_item_title_text}>
             {item?.title}
           </CustomText>
-          <CustomText>{item?.state}</CustomText>
+          <CustomText
+            style={item?.state === '완료' ? styles.state_complete : {}}>
+            {item?.state}
+          </CustomText>
         </View>
         <CustomText numberOfLines={2} style={styles.list_item_text}>
           {item?.text}
@@ -54,14 +71,22 @@ const ListContainer = observer(() => {
         {renderTabButton('진행중')}
         {renderTabButton('완료')}
       </View>
-      <CustomFlatList
-        style={styles.list_wrap}
-        data={dummyData()}
-        keyExtractor={item => item.id.toString()}
-        renderItem={({item}) => {
-          return <RenderListitem item={item} />;
-        }}
-      />
+      {store.todoList.length === 0 ? (
+        <View style={styles.not_todo_wrap}>
+          <CustomText style={styles.not_todo_text}>
+            할 일이 없습니다 ㅠ . ㅠ
+          </CustomText>
+        </View>
+      ) : (
+        <CustomFlatList
+          style={styles.list_wrap}
+          data={store.todoList}
+          keyExtractor={item => item.id.toString()}
+          renderItem={({item}) => {
+            return <RenderListitem item={item} />;
+          }}
+        />
+      )}
     </View>
   );
 });

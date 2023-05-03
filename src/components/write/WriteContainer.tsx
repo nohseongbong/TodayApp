@@ -6,10 +6,20 @@ import CustomTextInput from '../custom-component/CustomTextInput';
 import {writeStore} from '../../store/writeStore';
 import {observer} from 'mobx-react-lite';
 import CustomTouchable from '../custom-component/CustomTouchable';
+import {NavigationProp, useNavigation} from '@react-navigation/native';
+import {RootStackParamList} from '../../types/navigationParamsType';
+import {SCREEN_NAME} from '../../constants/navigation';
 
 const WriteContainer = observer(() => {
   const store = writeStore;
   const styles = style();
+  const navigation: NavigationProp<RootStackParamList> = useNavigation();
+
+  const onPressWrite = () => {
+    store.createTodo();
+    navigation.navigate(SCREEN_NAME.LIST);
+  };
+
   return (
     <View style={styles.container}>
       <CustomTextInput
@@ -32,7 +42,13 @@ const WriteContainer = observer(() => {
         />
       </View>
 
-      <CustomTouchable style={styles.write_btn}>
+      <CustomTouchable
+        onPress={onPressWrite}
+        style={[
+          styles.write_btn,
+          !store.checkWriteButton && {backgroundColor: '#98a69e'},
+        ]}
+        disabled={!store.checkWriteButton}>
         <CustomText style={styles.write_btn_text}>작성완료</CustomText>
       </CustomTouchable>
     </View>

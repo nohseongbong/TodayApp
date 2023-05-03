@@ -4,7 +4,7 @@ export const palette = {
   INNER_BACKGROUND: '#fff',
   TEXT: '#343A40',
   BUTTON_TEXT: '#fff',
-  COMPLETE: '#A5FFA8',
+  COMPLETE: '#1ac765',
   WAIT: '#a0a6b0',
-  DELTED: '#e34451',
+  DELETED: '#e34451',
 };

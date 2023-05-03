@@ -10,7 +10,7 @@ export const setStorage = async (key: string, value: any) => {
   }
 };
 
-export const getStorage = async (key: string) => {
+export const getStorage = async (key: string): Promise<any> => {
   try {
     const value = await EncryptedStorage.getItem(key);
     if (!isNull(value)) {
