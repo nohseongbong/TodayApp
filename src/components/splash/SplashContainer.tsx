@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {
   NavigationProp,
   useFocusEffect,
@@ -12,20 +12,23 @@ import {IMG} from '../../assets/images';
 import {palette} from '../../constants/palette';
 import {clearStorage, getStorage} from '../../lib/storage';
 import {listStore} from '../../store/listStore';
+import {checkForUpdate} from '../../lib/checkForUpdate';
 
 const SplashContainer = () => {
   const navigation: NavigationProp<RootStackParamList> = useNavigation();
 
   const getTodoList = async () => {
-    // await clearStorage();
     let list = await getStorage('list');
     if (!list) {
       list = [];
     }
-    console.log(list, '이거당');
     listStore.setTodoList(list);
   };
 
+  useEffect(() => {
+    checkForUpdate();
+    // checkUpdateVersion();
+  }, []);
   useFocusEffect(
     React.useCallback(() => {
       getTodoList();
@@ -51,7 +54,7 @@ const SplashContainer = () => {
           marginTop: 25,
           fontWeight: 'bold',
         }}>
-        ToDo
+        Today
       </CustomText>
     </View>
   );

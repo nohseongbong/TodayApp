@@ -1,4 +1,4 @@
-package com.todayapp;
+package com.today.todo.app;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;

@@ -64,6 +64,8 @@ yarn-error.log
 
 # .env files
 .env
+.env.devlop
+.env.stage
 .env.production
 
 # gradle properties

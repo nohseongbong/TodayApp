@@ -28,6 +28,12 @@
 	<dict>
 		<key>NSExceptionDomains</key>
 		<dict>
+			<key>codepush.azurewebsites.net</key>
+			<string/>
+			<key>codepush.blob.core.windows.net</key>
+			<string/>
+			<key>codepushupdates.azureedge.net</key>
+			<string/>
 			<key>localhost</key>
 			<dict>
 				<key>NSExceptionAllowsInsecureHTTPLoads</key>
@@ -35,6 +41,10 @@
 			</dict>
 		</dict>
 	</dict>
+	
+	<key>CodePushDeploymentKey</key>
+	<string>${CODE_PUSH_IOS_PRODUCTION}</string>
+
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string></string>
 	<key>UILaunchStoryboardName</key>
