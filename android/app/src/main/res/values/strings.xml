@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">Today</string>
-    <string moduleConfig="true" name="CodePushDeploymentKey">@string/CODE_PUSH_ANDROID_PRODUCTION</string>
+    <string moduleConfig="true" name="CodePushDeploymentKey">@string/CODE_PUSH_KEY</string>
 </resources>

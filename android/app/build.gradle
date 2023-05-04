@@ -113,7 +113,7 @@ android {
         versionCode project.env.get("BUILD_VERSION").toInteger()
         versionName project.env.get("APP_VERSION")
         resValue "string", "build_config_package", "com.today.todo.app"
-        resValue "string", "CODE_PUSH_ANDROID_PRODUCTION", project.env.get("CODE_PUSH_ANDROID_PRODUCTION")
+      
     }
 
     splits {
@@ -141,6 +141,7 @@ android {
     buildTypes {
         debug {
             signingConfig signingConfigs.debug
+            resValue "string", "CODE_PUSH_KEY", project.env.get("CODE_PUSH_ANDROID_STAGING")
         }
         release {
             // Caution! In production, you need to generate your own keystore file.
@@ -148,7 +149,14 @@ android {
             signingConfig signingConfigs.debug
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+            resValue "string", "CODE_PUSH_KEY", project.env.get("CODE_PUSH_ANDROID_PRODUCTION")
         }
+        releaseStaging {
+            initWith release
+            resValue "string", "CODE_PUSH_KEY", project.env.get("CODE_PUSH_ANDROID_STAGING")
+            matchingFallbacks = ['release']
+        }
+        
        
     }
 
