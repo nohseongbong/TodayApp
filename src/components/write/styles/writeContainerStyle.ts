@@ -5,25 +5,31 @@ import {fs, ht, wt} from '../../../lib/responsiveSize';
 const style = () => {
   const colors = palette;
   return StyleSheet.create({
+    scroll: {
+      width: '100%',
+      height: '100%',
+      backgroundColor: colors.BACKGROUND,
+    },
     container: {
-      flex: 1,
+      width: '100%',
+      height: ht(700),
       justifyContent: 'space-between',
       alignItems: 'center',
-      backgroundColor: palette.BACKGROUND,
+      backgroundColor: colors.BACKGROUND,
       paddingHorizontal: wt(7),
       paddingVertical: ht(20),
     },
     title_input_wrap: {
       width: '100%',
       height: ht(50),
-      backgroundColor: palette.INNER_BACKGROUND,
+      backgroundColor: colors.INNER_BACKGROUND,
       borderRadius: 5,
       borderWidth: 0,
     },
     content_wrap: {
       width: '100%',
       paddingVertical: 10,
-      backgroundColor: palette.INNER_BACKGROUND,
+      backgroundColor: colors.INNER_BACKGROUND,
       borderRadius: 5,
     },
     content_input: {
@@ -37,13 +43,13 @@ const style = () => {
       width: '100%',
       height: ht(50),
       maxWidth: wt(600),
-      backgroundColor: palette.PRIMARY,
+      backgroundColor: colors.PRIMARY,
       justifyContent: 'center',
       alignItems: 'center',
       borderRadius: 5,
     },
     write_btn_text: {
-      color: palette.BUTTON_TEXT,
+      color: colors.BUTTON_TEXT,
       fontSize: fs(15),
       fontWeight: 'bold',
     },

@@ -5,7 +5,7 @@ import RootNavigator from './src/navigation/RootNavigator';
 import CodePush from 'react-native-code-push';
 const App = () => {
   return (
-    <KeyboardAvoidingView behavior="height" style={styles.container}>
+    <KeyboardAvoidingView behavior="padding" style={styles.container}>
       <NavigationContainer>
         <RootNavigator />
       </NavigationContainer>
