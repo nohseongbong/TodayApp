@@ -25,12 +25,9 @@ const SplashContainer = () => {
     listStore.setTodoList(list);
   };
 
-  useEffect(() => {
-    checkForUpdate();
-    // checkUpdateVersion();
-  }, []);
   useFocusEffect(
     React.useCallback(() => {
+      checkForUpdate();
       getTodoList();
       setTimeout(() => {
         navigation.reset({routes: [{name: STACK_NAME.MAIN}]});
@@ -54,7 +51,7 @@ const SplashContainer = () => {
           marginTop: 25,
           fontWeight: 'bold',
         }}>
-        Today
+        Today 1.0.0
       </CustomText>
     </View>
   );

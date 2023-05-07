@@ -1,5 +1,5 @@
 import React, {memo, useCallback, useEffect} from 'react';
-import {View} from 'react-native';
+import {Image, View} from 'react-native';
 import CustomText from '../custom-component/CustomText';
 import style from './styles/listContainerStyle';
 import CustomTouchable from '../custom-component/CustomTouchable';
@@ -12,6 +12,7 @@ import {RootStackParamList} from '../../types/navigationParamsType';
 import {SCREEN_NAME} from '../../constants/navigation';
 import {todoStore} from '../../store/todoStore';
 import {TodoType} from '../../types/todoType';
+import {IMG} from '../../assets/images';
 
 const ListContainer = observer(() => {
   const store = listStore;
@@ -52,10 +53,14 @@ const ListContainer = observer(() => {
           <CustomText style={styles.list_item_title_text}>
             {item?.title}
           </CustomText>
-          <CustomText
-            style={item?.state === '완료' ? styles.state_complete : {}}>
-            {item?.state}
-          </CustomText>
+          {item?.state === '완료' ? (
+            <Image style={styles.check_img} source={IMG.CHECK} />
+          ) : (
+            <CustomText
+              style={item?.state === '완료' ? styles.state_complete : {}}>
+              {item?.state}
+            </CustomText>
+          )}
         </View>
         <CustomText numberOfLines={2} style={styles.list_item_text}>
           {item?.text}

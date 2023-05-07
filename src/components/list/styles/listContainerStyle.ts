@@ -87,6 +87,10 @@ const style = () => {
       fontWeight: 'bold',
       marginBottom: ht(60),
     },
+    check_img: {
+      width: wt(15),
+      height: ht(15),
+    },
   });
 };
 

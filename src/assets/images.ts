@@ -5,4 +5,5 @@ export const IMG = {
   LIST_ON: require('./icon/list_on.png'),
   LIST_OFF: require('./icon/list_off.png'),
   BACK: require('./icon/back.png'),
+  CHECK: require('./icon/check.png'),
 };
