@@ -51,7 +51,7 @@ const SplashContainer = () => {
           marginTop: 25,
           fontWeight: 'bold',
         }}>
-        Today 1.0.0
+        Today
       </CustomText>
     </View>
   );

@@ -3,15 +3,15 @@ apply plugin: "com.facebook.react"
 
 import com.android.build.OutputFile
 
-project.ext.envConfigFiles = [
-    developdebug: ".env.develop",
-    developrelease: ".env.develop", 
-    stagedebug: ".env.stage",
-    stagerelease: ".env.stage",
-    productdebug: ".env.production",    
-    productrelease: ".env.production",
-    anothercustombuild: ".env",
-]
+// project.ext.envConfigFiles = [
+//     developdebug: ".env.develop",
+//     developrelease: ".env.develop", 
+//     stagedebug: ".env.stage",
+//     stagerelease: ".env.stage",
+//     productdebug: ".env.production",    
+//     productrelease: ".env.production",
+//     anothercustombuild: ".env",
+// ]
 
 apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
 
@@ -107,11 +107,11 @@ android {
 
     namespace "com.today.todo.app"
     defaultConfig {
-        applicationId project.env.get("APP_ID")
+        applicationId "com.today.todo.app"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode project.env.get("BUILD_VERSION").toInteger()
-        versionName project.env.get("APP_VERSION")
+        versionCode 2
+        versionName '1.0.1'
         resValue "string", "build_config_package", "com.today.todo.app"
       
     }
