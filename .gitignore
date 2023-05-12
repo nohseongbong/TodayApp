@@ -67,6 +67,7 @@ yarn-error.log
 .env.devlop
 .env.stage
 .env.production
+.env.default
 
 # gradle properties
 android/gradle.properties
@@ -78,3 +79,8 @@ ios/GoogleService-Info.plist
 # lock file
 *.lock
 package-lock.json
+
+#fastlane file
+ios/fastlane/Appfile
+android/fastlane/Appfile
+android/fastlane/pc-api-7386214889999086343-986-195a243fd51e.json

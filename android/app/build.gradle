@@ -110,8 +110,8 @@ android {
         applicationId "com.today.todo.app"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 2
-        versionName '1.0.1'
+        versionCode 6
+        versionName "1.0.1"
         resValue "string", "build_config_package", "com.today.todo.app"
       
     }

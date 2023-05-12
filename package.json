@@ -8,7 +8,12 @@
     "lint": "eslint .",
     "start": "react-native start",
     "test": "jest",
-    "aab": "cd android && ./gradlew bundleRelease"
+    "beta:android": "npm run prebuild-android && cd ./android && bundle exec fastlane beta version:patch",
+    "beta:ios": "cd ./ios && bundle exec fastlane beta version:patch",
+    "beta": "npm run beta:android && npm run beta:ios",
+    "release:android": "npm run prebuild-android && cd ./android && bundle exec fastlane release version:patch",
+    "release:ios": "cd ./ios && bundle exec fastlane release version:patch",
+    "release": "npm run release:android && npm run release:ios"
   },
   "dependencies": {
     "@react-navigation/bottom-tabs": "^6.5.7",
