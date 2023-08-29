@@ -1,5 +1,9 @@
 # TodayApp
 
+## 프로젝트 소개
+fastlane, code push를 사용하기 위해 만든 프로젝트
+
+
 ## Code Push 설정
 
 
