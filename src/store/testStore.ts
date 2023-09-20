@@ -3,10 +3,14 @@ import {api} from '../api/api';
 
 class TestStore {
   list: any[] = [];
-
+  isUpdate: boolean = false;
   constructor() {
     makeAutoObservable(this);
   }
+
+  setIsUpdate = (state: boolean) => {
+    this.isUpdate = state;
+  };
 
   fetchPosts = async (): Promise<void> => {
     try {

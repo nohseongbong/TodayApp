@@ -1,4 +1,4 @@
-import {Alert, Linking, Platform} from 'react-native';
+import {Alert, Linking} from 'react-native';
 import VersionCheck from 'react-native-version-check';
 
 export const checkForUpdate = async () => {
@@ -11,10 +11,8 @@ export const checkForUpdate = async () => {
     }
     if (updateAvailable.isNeeded) {
       const {currentVersion, latestVersion, storeUrl} = updateAvailable;
-
       const currentMajorMinor = currentVersion.split('.').slice(0, 2).join('.');
       const latestMajorMinor = latestVersion.split('.').slice(0, 2).join('.');
-
       if (currentMajorMinor !== latestMajorMinor) {
         Alert.alert(
           '최신 버전 업데이트',
