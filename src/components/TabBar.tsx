@@ -3,14 +3,11 @@ import {Image, View} from 'react-native';
 import {BottomTabBarProps} from '@react-navigation/bottom-tabs';
 import {observer} from 'mobx-react-lite';
 import style from './tabBarStyle';
-import {palette} from '../constants/palette';
 import CustomTouchable from './custom-component/CustomTouchable';
-import CustomText from './custom-component/CustomText';
 import {IMG} from '../assets/images';
 
 const TabBar = observer(
   ({state, descriptors, navigation}: BottomTabBarProps) => {
-    const colors = palette;
     const styles = style();
 
     return (
