@@ -1,4 +1,4 @@
-import React, {memo, useCallback, useEffect} from 'react';
+import React, {memo, useCallback} from 'react';
 import {Image, View} from 'react-native';
 import CustomText from '../custom-component/CustomText';
 import style from './styles/listContainerStyle';
@@ -6,7 +6,6 @@ import CustomTouchable from '../custom-component/CustomTouchable';
 import {listStore} from '../../store/listStore';
 import {observer} from 'mobx-react-lite';
 import CustomFlatList from '../custom-component/CustomFlatList';
-import {dummyData} from '../../data/testData';
 import {NavigationProp, useNavigation} from '@react-navigation/native';
 import {RootStackParamList} from '../../types/navigationParamsType';
 import {SCREEN_NAME} from '../../constants/navigation';
