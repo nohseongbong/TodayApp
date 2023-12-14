@@ -1,4 +1,4 @@
-import {TextProps, Text, StyleSheet, Platform} from 'react-native';
+import {TextProps, Text, StyleSheet} from 'react-native';
 import {observer} from 'mobx-react-lite';
 import {fs} from '../../lib/responsiveSize';
 import {palette} from '../../constants/palette';
