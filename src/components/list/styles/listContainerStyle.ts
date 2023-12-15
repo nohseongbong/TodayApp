@@ -1,4 +1,4 @@
-import {Platform, StyleSheet} from 'react-native';
+import {StyleSheet} from 'react-native';
 import {palette} from '../../../constants/palette';
 import {fs, ht, wt} from '../../../lib/responsiveSize';
 
