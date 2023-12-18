@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {
   NavigationProp,
   useFocusEffect,
@@ -10,7 +10,7 @@ import {STACK_NAME} from '../../constants/navigation';
 import CustomText from '../custom-component/CustomText';
 import {IMG} from '../../assets/images';
 import {palette} from '../../constants/palette';
-import {clearStorage, getStorage} from '../../lib/storage';
+import {getStorage} from '../../lib/storage';
 import {listStore} from '../../store/listStore';
 import {checkForUpdate} from '../../lib/checkForUpdate';
 
