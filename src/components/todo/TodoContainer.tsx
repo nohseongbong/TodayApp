@@ -1,7 +1,6 @@
 import React from 'react';
 import {ScrollView, View} from 'react-native';
 import CustomText from '../custom-component/CustomText';
-import CustomTextInput from '../custom-component/CustomTextInput';
 import {observer} from 'mobx-react-lite';
 import style from './styles/todoContainerStyle';
 import CustomTouchable from '../custom-component/CustomTouchable';
