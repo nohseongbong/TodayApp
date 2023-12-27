@@ -1,6 +1,5 @@
-import {makeAutoObservable, runInAction} from 'mobx';
-import {api} from '../api/api';
-import {getStorage, setStorage} from '../lib/storage';
+import {makeAutoObservable} from 'mobx';
+import {setStorage} from '../lib/storage';
 import {TodoType} from '../types/todoType';
 import {listStore} from './listStore';
 
