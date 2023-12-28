@@ -1,4 +1,4 @@
-import {makeAutoObservable, runInAction} from 'mobx';
+import {makeAutoObservable} from 'mobx';
 import {TodoType} from '../types/todoType';
 import {listStore} from './listStore';
 import {setStorage} from '../lib/storage';
