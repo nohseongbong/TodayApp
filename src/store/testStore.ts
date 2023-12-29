@@ -23,7 +23,7 @@ class TestStore {
         this.list = data;
       });
     } catch (error) {
-      console.log(error, ' : axios 에러');
+      console.log(error, ' :  에러');
     }
   };
 }
