@@ -6,7 +6,7 @@ export const dummyData = function () {
     arr.push({
       id: index,
       title: '제목이다',
-      text: '할일 이다~~~~eqweqweqeqweqweqw',
+      text: '',
       state: random(0, 100) % 2 === 0 ? '진행중' : '완료',
     });
   }
